@@ -15,7 +15,6 @@ This project demonstrates how to create two Docker containers with an Alpine Lin
 
 Clone this repository to your local machine:
 
-```bash
 git clone https://github.com/yourusername/docker_hw.git
 cd docker_hw
 
