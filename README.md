@@ -41,16 +41,16 @@ ping "ip server-container"
 ### 6. Run the script on the client to send data to the server
 - Execute server-container
 ```sh
-- docker exec -it server-container /bin/sh
+docker exec -it server-container /bin/sh
 - ./nc_server.sh
 ```
 - Execute client-container
 ```sh
-- docker exec -it client-container /bin/sh
-- ./nc_client.sh
+docker exec -it client-container /bin/sh
+./nc_client.sh
 ```
 ## File Structure
-Dockerfile - Dockerfile for the client and server containers.
-client.sh - A script that initiates a connection to the server and sends data.
-server.sh - A script that accepts data from the client.
-README.md - Project description and instructions.
+- Dockerfile - Dockerfile for the client and server containers.
+- client.sh - A script that initiates a connection to the server and sends data.
+- server.sh - A script that accepts data from the client.
+- README.md - Project description and instructions.
