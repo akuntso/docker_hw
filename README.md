@@ -42,7 +42,7 @@ ping "ip server-container"
 - Execute server-container
 ```sh
 docker exec -it server-container /bin/sh
-- ./nc_server.sh
+./nc_server.sh
 ```
 - Execute client-container
 ```sh
