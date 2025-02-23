@@ -17,8 +17,8 @@ git clone https://github.com/yourusername/docker_hw.git
 cd docker_hw
 ```
 ### 2. Build Docker Images. Navigate to the directory with the Dockerfile and build the images for the server and the client.
-```sh
 - For the server
+```sh
 docker build -t myserver -f Dockerfile .
 ```
 - For the client
