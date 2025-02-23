@@ -16,25 +16,24 @@ This project demonstrates how to create two Docker containers with an Alpine Lin
 git clone https://github.com/yourusername/docker_hw.git
 cd docker_hw
 ```
-### 2. Build Docker Images. Navigate to the directory with the Dockerfile and build the images for the server and the client.
-- For the server
+### 2. Build Docker Image. Navigate to the directory with the Dockerfile and build the image.
 ```sh
 docker build -t myserver -f Dockerfile .
-```
-- For the client
-```sh
-docker build -t myclient -f Dockerfile .
 ```
 ### 3. Create a custom bridge network for the containers:
 ```sh
 docker network create bridge my_bridge_network
 ```
-### 4. Run the servers container:
+### 4. Run the containers for the server and client based on myserver image in the same my_bridge_network network:
+- The server container
 ```sh
 docker run -it -d --name server-container --network my_bridge_network myserver
+```
+- The client container
+```sh
 docker run -it -d --name client-container --network my_bridge_network myserver
 ```
-### 5. To verify that the containers can communicate with each other, access the client containe. Inside the client container, you can test the connection to the server using ping or netcat or other tools.
+### 5. To verify that the containers can communicate with each other, access the client container. Inside the client container, you can test the connection to the server using ping command. (`ip server-container` you can see inside the server container - `docker exec -it server-container /bin/sh`  and than `ifconfig` command")
 ```sh
 docker exec -it client-container /bin/sh
 ping "ip server-container"
